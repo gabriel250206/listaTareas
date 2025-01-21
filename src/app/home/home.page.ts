@@ -16,7 +16,16 @@ export class HomePage {
   constructor() {}
 
   addItem(name:string,date:string):void{
-    
+    if(name.trim()&&date.trim()){
+      this.items.push({
+        id:this.nextId++,
+        name:name.trim(),
+        date:date.trim(),
+        completed:false,//por defecto no esta completo
+      });
+    }else{
+      console.error('el nombre y la fecha no pueden estar vacios')
+    }
   }
 
 }
