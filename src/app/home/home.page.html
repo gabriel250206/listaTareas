@@ -10,18 +10,32 @@
   <h2>lista</h2>
 
   <input #nameInput type="text" placeholder="nombre" />
-  <input #dateInput type="date">
+  <br>
+  <h1>Fecha de inicio</h1>
+  <input #dateInputI type="date">
+  <h1>Fecha fin</h1>
+  <input #dateInputF type="date">
+  <h1>Ubicacion</h1>
+  <input #ubi type="text" placeholder="nombre" />
+  
+  <h1>Nombre de encargado</h1>
+  <input #ne type="text" placeholder="nombre" />
+  <h1>Telefono de encargado</h1>
+  <input #tel type="text" placeholder="nombre" />
+  
 
-  <button (click)="addItem(nameInput.value,dateInput.value)" id="botonEnvio">agregar</button>
+  <button (click)="addItem(nameInput.value,dateInputI.value,dateInputF.value,ubi.value,ne.value,tel.value)" id="botonEnvio">agregar</button>
   <table border="1" style="margin-top:20px;width: 100%;text-align: left;">
     <thead>
 
       <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Fecha</th>
-        <th>Completado</th>
-        <th>Acciones</th>
+        <th>Nombre del evento</th>
+        <th>Fecha inicio</th>
+        <th>Fecha fin</th>
+        <th>Ubicacion</th>
+        <th>Confirmacion de evento</th>
+        <th>Nombre de encargado</th>
+        <th>Telefono de encargado</th>
         
       </tr>
       

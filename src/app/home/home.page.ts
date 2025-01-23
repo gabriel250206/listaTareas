@@ -10,18 +10,22 @@ import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/stan
 })
 export class HomePage {
 
-  items: {id:number;name:string;date:string; completed:boolean}[]=[]
+  items: {id:number;name:string;dateI:string; dateF:string; ubicacion:string; completed:boolean;nombreEncargado:string;telefono:string}[]=[]
   nextId:number=1
 
   constructor() {}
 
-  addItem(name:string,date:string):void{
-    if(name.trim() && date.trim()){
+  addItem(name:string,dateI:string, dateF:string ,ubicacion:string,  nombreEncargado:string, telefono:string):void{
+    if(name.trim() && dateI.trim()){
       this.items.push({
         id:this.nextId++,
         name:name.trim(),
-        date:date.trim(),
+        dateI:dateI.trim(),
+        dateF:dateF.trim(),
+        ubicacion:ubicacion.trim(),
         completed:false,//por defecto no esta completo
+        nombreEncargado:nombreEncargado.trim(),
+        telefono:telefono.trim(),
       });
     }else{
       console.error('el nombre y la fecha no pueden estar vacios')
