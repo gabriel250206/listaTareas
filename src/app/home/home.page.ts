@@ -16,7 +16,7 @@ export class HomePage {
   constructor() {}
 
   addItem(name:string,date:string):void{
-    if(name.trim()&&date.trim()){
+    if(name.trim() && date.trim()){
       this.items.push({
         id:this.nextId++,
         name:name.trim(),
@@ -26,6 +26,13 @@ export class HomePage {
     }else{
       console.error('el nombre y la fecha no pueden estar vacios')
     }
+  }
+  toggleCompleted(id:number):void{
+    const item=this.items.find(item=>item.id===id);
+    if(item) item.completed=!item.completed;
+  }
+  removeItem(id:number):void{
+    this.items=this.items.filter(item=>item.id !==id);
   }
 
 }

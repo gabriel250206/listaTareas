@@ -10,6 +10,32 @@
   <h2>lista</h2>
 
   <input #nameInput type="text" placeholder="nombre" />
-  <input #dateinput type="date">
-  <button>agregar</button>
+  <input #dateInput type="date">
+
+  <button (click)="addItem(nameInput.value,dateInput.value)" id="botonEnvio">agregar</button>
+  <table border="1" style="margin-top:20px;width: 100%;text-align: left;">
+    <thead>
+
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Fecha</th>
+        <th>Completado</th>
+        <th>Acciones</th>
+        
+      </tr>
+      
+    </thead>
+    <tbody>
+      <tr *NgFor="let item of items">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.date}}</td>
+        <td>
+          <input type="checkbox"[checked]="item.completed"/>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
 </ion-content>
